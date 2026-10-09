@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Termos de Uso do Filume — Filume</title>
-<meta name="description" content="Termos de Uso do Filume do Filume, o app para grupos de amigos escolherem um filme por rodada.">
+<title>Convite — Filume</title>
+<meta name="description" content="Convite do Filume, o app para grupos de amigos escolherem um filme por rodada.">
 <style>
   /* Paleta "Escuro · vermelho" do app (src/theme). */
   :root{color-scheme:dark;--bg:#121012;--surface:#1B181A;--border:#342F32;--text:#F3EFEE;--muted:#A59DA0;--dim:#766F72;--primary:#E23B4A;--on-primary:#FBF7F6}
@@ -38,45 +38,28 @@
 <div class="wrap">
   <header><img class="mark" src="./logo.png" alt=""><div class="brand">Filume</div></header>
   <p class="tagline">Um filme por rodada. As notas só aparecem depois da sua.</p>
-  <nav><a href="./">Privacidade</a><span aria-current="page">Termos</span><a href="./suporte.html">Suporte</a></nav>
-  <h1>Termos de Uso do Filume</h1>
-
-<p>Última atualização: 22 de setembro de 2026.</p>
-
-<p>Ao criar uma conta você concorda com estes termos e com a Política de Privacidade.</p>
-
-<h2>O serviço</h2>
-
-<p>O Filume permite que grupos privados de amigos escolham filmes, registrem notas e resenhas e conversem sobre eles. As informações de filmes vêm do TMDB; o Filume não hospeda nem distribui filmes.</p>
-
-<h2>Sua conta</h2>
-
-<p>Você entra com sua conta Apple ou Google e é responsável pelo que faz com ela e por manter essa conta segura. É preciso ter pelo menos 13 anos.</p>
-
-<h2>Conteúdo e conduta</h2>
-
-<p>Você mantém a propriedade do que escreve e nos dá permissão para exibir esse conteúdo aos membros do seu grupo. <strong>Não é permitido</strong> conteúdo abusivo, assédio, discurso de ódio, spam, conteúdo sexual envolvendo menores, nem violação de direitos de terceiros. Comentários e avaliações podem ser denunciados e bloqueados; conteúdo que viole estas regras será removido e a conta pode ser encerrada. Analisamos denúncias em até 24 horas.</p>
-
-<h2>Notas e resenhas</h2>
-
-<p>Uma avaliação, depois de enviada, não pode ser editada. Isso é intencional: garante que ninguém mude a nota depois de ver a dos outros.</p>
-
-<h2>Encerramento</h2>
-
-<p>Você pode excluir sua conta a qualquer momento pelo app. Podemos suspender contas que violem estes termos.</p>
-
-<h2>Garantias e responsabilidade</h2>
-
-<p>O app é fornecido “como está”, sem garantias. Na medida permitida pela lei, não nos responsabilizamos por danos indiretos decorrentes do uso.</p>
-
-<h2>Mudanças</h2>
-
-<p>Podemos atualizar estes termos; avisaremos no app quando houver mudanças relevantes.</p>
-
-<h2>Contato</h2>
-
-<p><a href="mailto:filumeapp@gmail.com">filumeapp@gmail.com</a></p>
-
+  <nav><a href="./">Privacidade</a><a href="./termos.html">Termos</a><a href="./suporte.html">Suporte</a></nav>
+  
+<h1>Convite para um grupo</h1>
+<p>Alguém te chamou para um grupo do Filume.</p>
+<p><strong>Código: <span id="code">—</span></strong></p>
+<p><a id="open" class="btn" href="#">Abrir no Filume</a></p>
+<h2>Ainda não tem o app?</h2>
+<p>Baixe o Filume, entre, toque em <strong>Grupos</strong> e depois em <strong>Entrar com código</strong>, e digite o código acima.</p>
+<p><a href="https://apps.apple.com/app/id6811296654">Baixar na App Store</a></p>
+<script>
+  (function () {
+    var c = (new URLSearchParams(location.search).get('c') || location.hash.slice(1) || '').replace(/[^A-Za-z0-9]/g, '').slice(0, 16);
+    document.getElementById('code').textContent = c || '—';
+    if (!c) return;
+    var android = /Android/i.test(navigator.userAgent);
+    var url = android
+      ? 'intent://join/' + c + '#Intent;scheme=cineclube;package=com.kenji.cineclube;end'
+      : 'cineclube://join/' + c;
+    var a = document.getElementById('open'); a.href = url;
+    setTimeout(function () { location.href = url; }, 300);
+  })();
+</script>
   <footer>Filume — contato: <a href="mailto:filumeapp@gmail.com">filumeapp@gmail.com</a><br>
   Informações de filmes fornecidas pelo TMDB. Este produto usa a API do TMDB, mas não é endossado nem certificado pelo TMDB.</footer>
 </div>

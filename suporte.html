@@ -6,22 +6,22 @@
 <title>Suporte do Filume — Filume</title>
 <meta name="description" content="Suporte do Filume do Filume, o app para grupos de amigos escolherem um filme por rodada.">
 <style>
-  :root{color-scheme:dark;--bg:#0B0B0F;--surface:#15151C;--border:#2A2A35;--text:#F4F4F6;--muted:#9A9AAB;--dim:#6B6B7B;--primary:#F5C518}
+  /* Paleta "Escuro · vermelho" do app (src/theme). */
+  :root{color-scheme:dark;--bg:#121012;--surface:#1B181A;--border:#342F32;--text:#F3EFEE;--muted:#A59DA0;--dim:#766F72;--primary:#E23B4A;--on-primary:#FBF7F6}
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--text);
        font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
        -webkit-font-smoothing:antialiased}
   .wrap{max-width:720px;margin:0 auto;padding:40px 20px 80px}
   header{display:flex;align-items:center;gap:12px;margin-bottom:8px}
-  .mark{width:40px;height:40px;border-radius:10px;background:var(--primary);color:#0B0B0F;
-        display:grid;place-items:center;font-weight:800;font-size:20px;flex:none}
+  .mark{width:40px;height:40px;border-radius:10px;flex:none;display:block}
   .brand{font-size:20px;font-weight:800;letter-spacing:-.01em}
   .tagline{color:var(--muted);font-size:14px;margin:0 0 24px 52px}
   nav{display:flex;gap:8px;flex-wrap:wrap;padding-bottom:24px;border-bottom:1px solid var(--border)}
   nav a,nav span{padding:6px 12px;border-radius:999px;font-size:14px;text-decoration:none;
                  border:1px solid var(--border);color:var(--muted)}
   nav a:hover{color:var(--text);border-color:var(--dim)}
-  nav span[aria-current]{background:var(--primary);border-color:var(--primary);color:#0B0B0F;font-weight:600}
+  nav span[aria-current]{background:var(--primary);border-color:var(--primary);color:var(--on-primary);font-weight:600}
   h1{font-size:28px;line-height:1.25;letter-spacing:-.02em;margin:32px 0 4px}
   h2{font-size:19px;margin:36px 0 8px;letter-spacing:-.01em}
   p{color:var(--muted);margin:12px 0}
@@ -29,13 +29,14 @@
   ul{margin:12px 0;padding-left:20px}
   li{color:var(--muted);margin:8px 0}
   a{color:var(--primary)}
+  .btn{display:inline-block;background:var(--primary);color:var(--on-primary);padding:12px 20px;border-radius:12px;text-decoration:none;font-weight:600}
   footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--border);color:var(--dim);font-size:13px}
   @media(max-width:600px){.wrap{padding:28px 18px 60px}h1{font-size:24px}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header><div class="mark">F</div><div class="brand">Filume</div></header>
+  <header><img class="mark" src="./logo.png" alt=""><div class="brand">Filume</div></header>
   <p class="tagline">Um filme por rodada. As notas só aparecem depois da sua.</p>
   <nav><a href="./">Privacidade</a><a href="./termos.html">Termos</a><span aria-current="page">Suporte</span></nav>
   <h1>Suporte do Filume</h1>
